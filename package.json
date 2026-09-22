@@ -19,6 +19,9 @@
     "postbuild": "echo Build complete",
     "vercel-build": "npm run install:all && npm run build"
   },
+  "dependencies": {
+    "serverless-http": "^12.0.0"
+  },
   "devDependencies": {
     "concurrently": "^9.0.1"
   }

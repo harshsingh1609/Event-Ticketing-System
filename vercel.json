@@ -3,7 +3,7 @@
   "buildCommand": "npm run vercel-build",
   "outputDirectory": "client/dist",
   "functions": {
-    "api/index.js": {
+    "api/**/*.js": {
       "runtime": "nodejs20.x",
       "maxDuration": 30
     }

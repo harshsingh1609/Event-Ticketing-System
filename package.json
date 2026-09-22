@@ -16,11 +16,14 @@
     "setup": "npm run install:all",
     "dev:all": "npm run install:all && npm run dev",
     "start:all": "npm run install:all && npm run start",
-    "postbuild": "echo Build complete",
-    "vercel-build": "npm run install:all && npm run build"
+    "vercel-build": "npm install && npm run install:all && npm run build && mv client/dist dist"
   },
   "dependencies": {
-    "serverless-http": "^12.0.0"
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.3",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
     "concurrently": "^9.0.1"

@@ -1,10 +1,18 @@
 // api/index.js – Vercel Serverless Function entry point
 const serverless = require('serverless-http');
 const express = require('express');
+const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
 dotenv.config();
+
+// Connect to MongoDB
+if (mongoose.connection.readyState === 0) {
+  mongoose.connect(process.env.MONGO_URI)
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => console.error('MongoDB Connection Error:', err));
+}
 
 const app = express();
 app.use(cors());
